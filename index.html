@@ -1,45 +1,52 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
+  <!-- Google AdSense -->
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8339105026900214" crossorigin="anonymous"></script>
   
+  <!-- Essential Meta Tags -->
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Gaurav Adhikari | AI & Robotics Portfolio</title>
-  <meta name="description" content="Portfolio of Gaurav Adhikari, a BSc Artificial Intelligence student at JKU Linz. Specializing in Machine Learning, Data Science, Python, and Robotics." />
-  <meta name="keywords" content="Gaurav Adhikari, AI Student, Machine Learning, Data Science, Python, PyTorch, Robotics, Web Development, Linz, Austria, Portfolio" />
+  <!-- SEO Optimization -->
+  <title>Gaurav Adhikari | AI & Robotics</title>
+  <meta name="description" content="Portfolio of Gaurav Adhikari, an AI student at JKU Linz and Budhanilkantha School alumni. Specializing in Machine Learning, Python, Web Dev, and Robotics." />
+  <meta name="keywords" content="Gaurav Adhikari, AI Student, Machine Learning, Python, PyTorch, Robotics, Web Development, Budhanilkantha School, JKU Linz, Austria, Portfolio" />
   <meta name="author" content="Gaurav Adhikari" />
   <meta name="robots" content="index, follow" />
-  <link rel="canonical" href="https://gauravadhikari.info.np/" />
 
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://gauravadhikari.info.np/" />
-  <meta property="og:title" content="Gaurav Adhikari | AI & Robotics" />
-  <meta property="og:description" content="Explore my projects in Machine Learning, Data Science, and Robotics. BSc AI student based in Linz, Austria." />
-  <meta property="og:image" content="https://gauravadhikari.info.np/about-pic.jpg" />
-
-  <meta property="twitter:card" content="summary_large_image" />
-  <meta property="twitter:url" content="https://gauravadhikari.info.np/" />
-  <meta property="twitter:title" content="Gaurav Adhikari | AI & Robotics" />
-  <meta property="twitter:description" content="Explore my projects in Machine Learning, Data Science, and Robotics. BSc AI student based in Linz, Austria." />
-  <meta property="twitter:image" content="https://gauravadhikari.info.np/about-pic.jpg" />
-
+  <!-- Typography -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
 
+  <!-- Embedded Modern UI/CSS -->
   <style>
-    /* CSS Variables for Easy Theming */
+    /* CSS Variables for Dark/Light Mode Theming */
     :root {
       --bg-color: #f8fafc;
       --text-color: #0f172a;
+      --text-secondary: #475569;
       --accent-color: #2563eb;
-      --accent-hover: #1d4ed8;
       --card-bg: #ffffff;
       --border-color: #e2e8f0;
+      --nav-bg: rgba(255, 255, 255, 0.85);
+      --shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05);
+      --shadow-hover: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
       --transition: all 0.3s ease-in-out;
+    }
+
+    [data-theme="dark"] {
+      --bg-color: #0f172a;
+      --text-color: #f8fafc;
+      --text-secondary: #94a3b8;
+      --accent-color: #60a5fa;
+      --card-bg: #1e293b;
+      --border-color: #334155;
+      --nav-bg: rgba(15, 23, 42, 0.85);
+      --shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.4);
+      --shadow-hover: 0 20px 25px -5px rgba(0, 0, 0, 0.6);
     }
 
     * {
@@ -54,13 +61,19 @@
       background-color: var(--bg-color);
       color: var(--text-color);
       line-height: 1.6;
+      transition: background-color 0.3s, color 0.3s;
     }
 
     h1, h2, h3, .logo {
       font-family: 'Poppins', sans-serif;
     }
 
-    /* Navigation - Glassmorphism Effect */
+    /* Invert regular PNG icons in dark mode so they are visible */
+    [data-theme="dark"] .png-icon {
+      filter: invert(1) brightness(2);
+    }
+
+    /* Navigation - Glassmorphism */
     nav {
       display: flex;
       justify-content: space-around;
@@ -68,33 +81,48 @@
       height: 8vh;
       position: sticky;
       top: 0;
-      background: rgba(255, 255, 255, 0.8);
+      background: var(--nav-bg);
       backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
       z-index: 1000;
-      box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+      border-bottom: 1px solid var(--border-color);
     }
 
     .logo {
       font-size: 1.5rem;
       font-weight: 700;
-      color: var(--text-color);
+      letter-spacing: -0.5px;
     }
 
     .nav-links {
       display: flex;
       gap: 2rem;
       list-style: none;
+      align-items: center;
     }
 
     .nav-links a {
       text-decoration: none;
       color: var(--text-color);
-      font-weight: 600;
+      font-weight: 500;
       transition: var(--transition);
     }
 
     .nav-links a:hover {
       color: var(--accent-color);
+    }
+
+    .theme-toggle {
+      font-size: 1.5rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      color: var(--text-color);
+      transition: var(--transition);
+    }
+    .theme-toggle:hover {
+      color: var(--accent-color);
+      transform: scale(1.1);
     }
 
     /* Sections */
@@ -104,35 +132,43 @@
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      padding: 5rem 5%;
+      padding: 6rem 5%;
       text-align: center;
     }
 
     .title {
       font-size: 3rem;
-      margin-bottom: 2rem;
+      margin-bottom: 3rem;
+      font-weight: 800;
     }
 
     .section__text__p1 {
-      color: #64748b;
+      color: var(--text-secondary);
       font-weight: 600;
-      letter-spacing: 1px;
+      letter-spacing: 1.5px;
       text-transform: uppercase;
+      font-size: 0.9rem;
+      margin-bottom: 0.5rem;
     }
 
     /* Profile Section */
     #profile {
       flex-direction: row;
-      gap: 4rem;
+      gap: 5rem;
     }
 
     .section__pic-container img {
-      width: 350px;
-      height: 350px;
+      width: 380px;
+      height: 380px;
       border-radius: 50%;
       object-fit: cover;
-      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+      box-shadow: var(--shadow-hover);
       border: 4px solid var(--card-bg);
+      transition: var(--transition);
+    }
+    
+    .section__pic-container img:hover {
+      transform: scale(1.02);
     }
 
     /* Buttons */
@@ -144,22 +180,23 @@
     }
 
     .btn {
-      padding: 0.8rem 1.5rem;
+      padding: 0.8rem 1.8rem;
       border-radius: 30px;
       font-weight: 600;
       cursor: pointer;
       transition: var(--transition);
       font-family: 'Inter', sans-serif;
+      font-size: 1rem;
     }
 
     .btn-color-1 {
       background-color: var(--text-color);
-      color: white;
+      color: var(--bg-color);
       border: 2px solid var(--text-color);
     }
 
     .btn-color-1:hover {
-      background-color: var(--bg-color);
+      background-color: transparent;
       color: var(--text-color);
     }
 
@@ -171,39 +208,45 @@
 
     .btn-color-2:hover {
       background-color: var(--text-color);
-      color: white;
+      color: var(--bg-color);
     }
 
-    /* Cards Structure (About, Skills, Projects) */
+    .icon {
+      width: 32px;
+      height: 32px;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+    
+    .icon:hover {
+      transform: translateY(-3px);
+    }
+
+    /* Cards Structure */
     .about-containers, .experience-details-container {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
       gap: 2rem;
-      margin-top: 2rem;
       width: 100%;
+      max-width: 1200px;
     }
 
     .details-container {
       background: var(--card-bg);
-      padding: 2rem;
-      border-radius: 20px;
-      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05);
+      padding: 2.5rem;
+      border-radius: 24px;
+      box-shadow: var(--shadow);
       border: 1px solid var(--border-color);
       flex: 1 1 300px;
-      max-width: 400px;
+      max-width: 450px;
       transition: var(--transition);
     }
 
     .details-container:hover {
       transform: translateY(-10px);
-      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
-    }
-
-    .icon {
-      width: 30px;
-      height: 30px;
-      cursor: pointer;
+      box-shadow: var(--shadow-hover);
+      border-color: var(--accent-color);
     }
 
     /* Skills Grid */
@@ -218,21 +261,30 @@
     article {
       display: flex;
       align-items: center;
-      gap: 0.5rem;
+      gap: 0.8rem;
+    }
+
+    article h3 {
+      font-size: 1.1rem;
+    }
+    article p {
+      color: var(--text-secondary);
+      font-size: 0.9rem;
     }
 
     /* Project Images */
     .project-img, video {
       width: 100%;
-      border-radius: 10px;
-      margin-bottom: 1rem;
+      height: 200px;
+      border-radius: 12px;
+      margin-bottom: 1.5rem;
       object-fit: cover;
     }
 
     /* Footer */
     footer {
       background-color: var(--card-bg);
-      padding: 3rem 0;
+      padding: 4rem 0 2rem;
       text-align: center;
       border-top: 1px solid var(--border-color);
     }
@@ -241,9 +293,9 @@
       display: flex;
       justify-content: center;
       list-style: none;
-      gap: 1.5rem;
-      margin: 1.5rem 0;
-      font-size: 1.5rem;
+      gap: 2rem;
+      margin: 2rem 0;
+      font-size: 1.8rem;
     }
 
     .social-icon a {
@@ -253,24 +305,80 @@
 
     .social-icon a:hover {
       color: var(--accent-color);
-      transform: scale(1.2);
+      transform: translateY(-5px);
     }
 
-    /* Responsive */
-    @media (max-width: 800px) {
+    /* Hamburger Menu & Mobile adjustments */
+    #hamburger-nav {
+      display: none;
+    }
+
+    @media (max-width: 900px) {
+      #desktop-nav {
+        display: none;
+      }
+      #hamburger-nav {
+        display: flex;
+      }
+      .hamburger-menu {
+        position: relative;
+        display: inline-block;
+      }
+      .hamburger-icon {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 24px;
+        width: 30px;
+        cursor: pointer;
+      }
+      .hamburger-icon span {
+        width: 100%;
+        height: 3px;
+        background-color: var(--text-color);
+        transition: all 0.3 ease-in-out;
+      }
+      .menu-links {
+        position: absolute;
+        top: 100%;
+        right: 0;
+        background-color: var(--card-bg);
+        width: fit-content;
+        max-height: 0;
+        overflow: hidden;
+        transition: all 0.3s ease-in-out;
+        border-radius: 10px;
+        box-shadow: var(--shadow);
+        border: 1px solid var(--border-color);
+      }
+      .menu-links a {
+        display: block;
+        padding: 15px 30px;
+        text-align: center;
+        font-size: 1.2rem;
+        color: var(--text-color);
+        text-decoration: none;
+        transition: all 0.3s ease-in-out;
+      }
+      .menu-links a:hover {
+        background-color: var(--accent-color);
+        color: white;
+      }
+      .menu-links.open {
+        max-height: 300px;
+      }
       #profile {
         flex-direction: column;
         text-align: center;
-        margin-top: 4rem;
-      }
-      .nav-links {
-        display: none; /* Hide for mobile, assume hamburger handles it */
+        margin-top: 2rem;
+        gap: 2rem;
       }
     }
   </style>
 </head>
 
 <body>
+  <!-- Desktop Nav -->
   <nav id="desktop-nav">
     <div class="logo">Gaurav Adhikari</div>
     <div>
@@ -279,139 +387,266 @@
         <li><a href="#experience">Skills</a></li>
         <li><a href="#projects">Projects</a></li>
         <li><a href="#contact">Contact</a></li>
+        <!-- Theme Toggle -->
+        <li class="theme-toggle" onclick="toggleTheme()" title="Toggle Dark/Light Mode">
+          <ion-icon id="theme-icon" name="moon-outline"></ion-icon>
+        </li>
       </ul>
     </div>
   </nav>
 
+  <!-- Mobile Nav -->
+  <nav id="hamburger-nav">
+    <div class="logo">Gaurav Adhikari</div>
+    <div style="display: flex; align-items: center; gap: 1rem;">
+      <div class="theme-toggle" onclick="toggleTheme()" style="font-size: 1.5rem;">
+        <ion-icon id="theme-icon-mobile" name="moon-outline"></ion-icon>
+      </div>
+      <div class="hamburger-menu">
+        <div class="hamburger-icon" onclick="toggleMenu()">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <div class="menu-links">
+          <a href="#about" onclick="toggleMenu()">About</a>
+          <a href="#experience" onclick="toggleMenu()">Skills</a>
+          <a href="#projects" onclick="toggleMenu()">Projects</a>
+          <a href="#contact" onclick="toggleMenu()">Contact</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Profile Section -->
   <section id="profile">
     <div class="section__pic-container">
       <img src="profile-pic.jpg" alt="Gaurav Adhikari" />
     </div>
     <div class="section__text">
       <p class="section__text__p1">Hello, I'm</p>
-      <h1 class="title">Gaurav Adhikari</h1>
-      <p class="section__text__p2" style="font-size: 1.2rem; color: var(--accent-color); font-weight: 600;">BSc Artificial Intelligence Student</p>
+      <h1 class="title" style="margin-bottom: 0.5rem;">Gaurav Adhikari</h1>
+      <p style="font-size: 1.25rem; color: var(--accent-color); font-weight: 600; margin-bottom: 1.5rem;">
+        BSc Artificial Intelligence Student
+      </p>
       
       <div class="btn-container">
         <button class="btn btn-color-2" onclick="window.open('resume.pdf')">Download CV</button>
         <button class="btn btn-color-1" onclick="location.href='#contact'">Contact Info</button>
       </div>
       
-      <div class="btn-container" style="margin-top: 1rem;">
-        <img src="linkedin.png" alt="LinkedIn" class="icon" onclick="location.href='https://www.linkedin.com/in/gauravadz/'" />
-        <img src="github.png" alt="Github" class="icon" onclick="location.href='https://github.com/GauravAdz'" />
+      <div class="btn-container" style="margin-top: 1.5rem;">
+        <img src="linkedin.png" alt="LinkedIn" class="icon png-icon" onclick="location.href='https://www.linkedin.com/in/gauravadz/'" />
+        <img src="github.png" alt="Github" class="icon png-icon" onclick="location.href='https://github.com/GauravAdz'" />
       </div>
     </div>
   </section>
 
+  <!-- About Section -->
   <section id="about">
     <p class="section__text__p1">Get To Know More</p>
     <h1 class="title">About Me</h1>
     <div class="about-containers">
-      <div class="details-container">
-        <h3>Background</h3>
-        <p>6+ years Robotics<br />Data Science & ML Focus</p>
+      
+      <div class="details-container" style="text-align: center;">
+        <img src="experience.png" alt="Experience icon" class="icon png-icon" style="margin-bottom: 1rem; width: 40px; height: 40px;" />
+        <h3>Focus Areas</h3>
+        <p style="color: var(--text-secondary); margin-top: 0.5rem;">
+          Data Science & ML<br />
+          Robotics (6+ Years)<br />
+          Web Development
+        </p>
       </div>
-      <div class="details-container">
-        <h3>Education (on-going)</h3>
-        <p>BSc Artificial Intelligence<br />Johannes Kepler University Linz</p>
+
+      <div class="details-container" style="text-align: center;">
+        <img src="education.png" alt="Education icon" class="icon png-icon" style="margin-bottom: 1rem; width: 40px; height: 40px;" />
+        <h3>Education</h3>
+        <p style="color: var(--text-secondary); margin-top: 0.5rem; font-size: 0.95rem;">
+          <strong>BSc Artificial Intelligence</strong><br />
+          Johannes Kepler University Linz<br /><br />
+          <strong>A Levels</strong><br />
+          Budhanilkantha School
+        </p>
       </div>
+      
     </div>
-    <p style="max-width: 800px; margin-top: 2rem; font-size: 1.1rem; color: #475569;">
-      Hi, I am Gaurav, a 20-year-old AI enthusiast currently based in Linz, Austria. I am deeply passionate about Machine Learning, Data Science, and developing new technologies. With a strong foundation in robotics and web development, my current focus lies in building predictive models, exploring quantitative finance, and creating interactive applications utilizing modern AI frameworks.
+    
+    <p style="max-width: 800px; margin-top: 3rem; font-size: 1.1rem; color: var(--text-secondary); line-height: 1.8;">
+      Hi, I am Gaurav, a 20-year-old AI enthusiast currently based in Linz, Austria. I am deeply passionate about Machine Learning, Data Science, and developing new technologies. From my early days building robotics at Budhanilkantha School to exploring AI frameworks today, my goal is to build intelligent systems and interactive web applications that solve real-world problems.
     </p>
   </section>
 
+  <!-- Skills Section -->
   <section id="experience">
     <p class="section__text__p1">Explore My</p>
     <h1 class="title">Technical Arsenal</h1>
     <div class="about-containers">
       
+      <!-- AI & Data Science -->
       <div class="details-container">
-        <h2 style="margin-bottom: 1rem; color: var(--accent-color);">AI & Data Science</h2>
+        <h2 style="margin-bottom: 1.5rem; color: var(--accent-color); font-size: 1.5rem;">AI & Data Science</h2>
         <div class="article-container">
-          <article><div><h3>Python</h3><p>Experienced</p></div></article>
-          <article><div><h3>PyTorch</h3><p>Intermediate</p></div></article>
-          <article><div><h3>Pandas</h3><p>Experienced</p></div></article>
-          <article><div><h3>Shiny Express</h3><p>Intermediate</p></div></article>
+          <article><img src="checkmark.png" class="icon png-icon" style="width: 20px; height: 20px;" /><div><h3>Python</h3><p>Experienced</p></div></article>
+          <article><img src="checkmark.png" class="icon png-icon" style="width: 20px; height: 20px;" /><div><h3>PyTorch</h3><p>Intermediate</p></div></article>
+          <article><img src="checkmark.png" class="icon png-icon" style="width: 20px; height: 20px;" /><div><h3>Pandas</h3><p>Experienced</p></div></article>
+          <article><img src="checkmark.png" class="icon png-icon" style="width: 20px; height: 20px;" /><div><h3>Shiny Express</h3><p>Intermediate</p></div></article>
         </div>
       </div>
 
+      <!-- Web Development -->
       <div class="details-container">
-        <h2 style="margin-bottom: 1rem; color: var(--accent-color);">Web Development</h2>
+        <h2 style="margin-bottom: 1.5rem; color: var(--accent-color); font-size: 1.5rem;">Web Development</h2>
         <div class="article-container">
-          <article><div><h3>React JS</h3><p>Intermediate</p></div></article>
-          <article><div><h3>Node JS</h3><p>Intermediate</p></div></article>
-          <article><div><h3>HTML / CSS</h3><p>Experienced</p></div></article>
-          <article><div><h3>JavaScript</h3><p>Intermediate</p></div></article>
+          <article><img src="checkmark.png" class="icon png-icon" style="width: 20px; height: 20px;" /><div><h3>React JS</h3><p>Intermediate</p></div></article>
+          <article><img src="checkmark.png" class="icon png-icon" style="width: 20px; height: 20px;" /><div><h3>Node JS</h3><p>Intermediate</p></div></article>
+          <article><img src="checkmark.png" class="icon png-icon" style="width: 20px; height: 20px;" /><div><h3>HTML / CSS</h3><p>Experienced</p></div></article>
+          <article><img src="checkmark.png" class="icon png-icon" style="width: 20px; height: 20px;" /><div><h3>JavaScript</h3><p>Intermediate</p></div></article>
         </div>
       </div>
 
+      <!-- Extracurriculars -->
       <div class="details-container">
-        <h2 style="margin-bottom: 1rem; color: var(--accent-color);">Extracurriculars</h2>
+        <h2 style="margin-bottom: 1.5rem; color: var(--accent-color); font-size: 1.5rem;">Extracurriculars</h2>
         <div class="article-container">
-          <article><div><h3>Robotics</h3><p>Experienced</p></div></article>
-          <article><div><h3>Quant Finance</h3><p>Intermediate</p></div></article>
-          <article><div><h3>Graphics Design</h3><p>Intermediate</p></div></article>
-          <article><div><h3>Football</h3><p>Active</p></div></article>
+          <article><img src="checkmark.png" class="icon png-icon" style="width: 20px; height: 20px;" /><div><h3>Robotics</h3><p>Experienced</p></div></article>
+          <article><img src="checkmark.png" class="icon png-icon" style="width: 20px; height: 20px;" /><div><h3>Quant Finance</h3><p>Intermediate</p></div></article>
+          <article><img src="checkmark.png" class="icon png-icon" style="width: 20px; height: 20px;" /><div><h3>Graphics Design</h3><p>Intermediate</p></div></article>
+          <article><img src="checkmark.png" class="icon png-icon" style="width: 20px; height: 20px;" /><div><h3>Football</h3><p>Active</p></div></article>
         </div>
       </div>
     </div>
   </section>
 
+  <!-- Projects Section -->
   <section id="projects">
     <p class="section__text__p1">Browse My Recent</p>
     <h1 class="title">Projects</h1>
     <div class="about-containers">
       
-      <div class="details-container">
+      <!-- Restored Udaan Project -->
+      <div class="details-container" style="display: flex; flex-direction: column;">
+        <img src="project-2.png" alt="Udaan Application" class="project-img" />
+        <h3 style="font-size: 1.5rem; margin-bottom: 0.5rem;">Udaan</h3>
+        <p style="color: var(--text-secondary); font-size: 0.95rem; margin-bottom: 1.5rem; flex-grow: 1;">Frontend Web Application built to optimize user workflows.</p>
+        <div class="btn-container" style="margin-top: auto;">
+          <button class="btn btn-color-2" onclick="location.href='https://github.com/GauravAdz/GS2.git'">GitHub</button>
+          <button class="btn btn-color-2" onclick="location.href='https://gauravadz.github.io/GS2/'">Live Demo</button>
+        </div>
+      </div>
+
+      <!-- Satellite Image Classifier -->
+      <div class="details-container" style="display: flex; flex-direction: column;">
         <img src="project-3.png" alt="Satellite Image Classifier" class="project-img" />
-        <h3>Satellite Image Classifier</h3>
-        <p style="color: #64748b; font-size: 0.9rem; margin-bottom: 1rem;">Python & Shiny Express</p>
-        <button class="btn btn-color-2" onclick="location.href='https://github.com/GauravAdz'">View GitHub</button>
+        <h3 style="font-size: 1.5rem; margin-bottom: 0.5rem;">Satellite Classifier</h3>
+        <p style="color: var(--text-secondary); font-size: 0.95rem; margin-bottom: 1.5rem; flex-grow: 1;">Built with Python & Shiny Express for analyzing geographic data.</p>
+        <div class="btn-container" style="margin-top: auto;">
+          <button class="btn btn-color-2" onclick="location.href='https://github.com/GauravAdz'">View GitHub</button>
+        </div>
       </div>
 
-      <div class="details-container">
-        <img src="project-2.png" alt="Udaan" class="project-img" />
-        <h3>Udaan - site for taking a leap</h3>
-        <p style="color: #64748b; font-size: 0.9rem; margin-bottom: 1rem;">My first Frontend Site</p>
-        <button class="btn btn-color-2" onclick="location.href='https://github.com/GauravAdz'">View Details</button>
-      </div>
-
-      <div class="details-container">
+      <!-- Smart Farm Eco-system -->
+      <div class="details-container" style="display: flex; flex-direction: column;">
         <video autoplay loop muted src="project-1.mp4"></video>
-        <h3>Smart Farm Eco-system</h3>
-        <p style="color: #64748b; font-size: 0.9rem; margin-bottom: 1rem;">Hardware & IoT Integration</p>
-        <button class="btn btn-color-2" onclick="location.href='poster.pdf'">View Details</button>
+        <h3 style="font-size: 1.5rem; margin-bottom: 0.5rem;">Smart Farm Eco-system</h3>
+        <p style="color: var(--text-secondary); font-size: 0.95rem; margin-bottom: 1.5rem; flex-grow: 1;">Hardware & IoT Integration for automated agriculture.</p>
+        <div class="btn-container" style="margin-top: auto;">
+          <button class="btn btn-color-2" onclick="location.href='poster.pdf'">Details</button>
+        </div>
       </div>
+      
     </div>
   </section>
 
+  <!-- Contact Section -->
   <section id="contact">
     <p class="section__text__p1">Get in Touch</p>
     <h1 class="title">Contact Me</h1>
-    <div class="about-containers" style="max-width: 600px;">
-      <div class="details-container" style="display: flex; flex-direction: column; align-items: center; text-align: center; gap: 1rem;">
-        <div style="font-size: 1.2rem; font-weight: 600;">📍 Linz, Austria</div>
-        <a href="mailto:admin@gauravadhikari.info.np" style="color: var(--accent-color); text-decoration: none; font-weight: 600;">📧 admin@gauravadhikari.info.np</a>
-        <a href="https://www.linkedin.com/in/gauravadz/" style="color: var(--accent-color); text-decoration: none; font-weight: 600;">💼 LinkedIn Profile</a>
+    <div class="details-container" style="display: flex; flex-direction: column; align-items: center; text-align: center; gap: 1.5rem; max-width: 600px;">
+      
+      <div style="display: flex; align-items: center; gap: 1rem; font-size: 1.2rem; font-weight: 600;">
+        <ion-icon name="location-outline" style="font-size: 1.8rem; color: var(--accent-color);"></ion-icon>
+        <p>Linz, Austria</p>
       </div>
+      
+      <div style="display: flex; align-items: center; gap: 1rem;">
+        <img src="email.png" alt="Email icon" class="icon png-icon" />
+        <a href="mailto:admin@gauravadhikari.info.np" style="color: var(--text-color); text-decoration: none; font-weight: 600; font-size: 1.1rem; transition: color 0.3s;">
+          admin@gauravadhikari.info.np
+        </a>
+      </div>
+      
+      <div style="display: flex; align-items: center; gap: 1rem;">
+        <img src="linkedin.png" alt="LinkedIn icon" class="icon png-icon" />
+        <a href="https://www.linkedin.com/in/gauravadz/" style="color: var(--text-color); text-decoration: none; font-weight: 600; font-size: 1.1rem; transition: color 0.3s;">
+          LinkedIn Profile
+        </a>
+      </div>
+      
     </div>
   </section>
 
+  <!-- Footer -->
   <footer>
-    <h2 style="font-size: 1.5rem; margin-bottom: 0.5rem;">Let's Connect!</h2>
+    <h2 style="font-size: 1.8rem; margin-bottom: 0.5rem; font-weight: 700;">Let's Connect!</h2>
     <ul class="social-icon">
       <li><a href="https://www.facebook.com/gauravadx"><ion-icon name="logo-facebook"></ion-icon></a></li>
       <li><a href="https://www.twitter.com/gauravadz"><ion-icon name="logo-twitter"></ion-icon></a></li>
       <li><a href="https://www.youtube.com/@GalaxProzSeries"><ion-icon name="logo-youtube"></ion-icon></a></li>
       <li><a href="https://www.instagram.com/gauravadz"><ion-icon name="logo-instagram"></ion-icon></a></li>
     </ul>
-    <p class="copyright" style="color: #64748b; margin-top: 1.5rem;">© GauravAdhikari.Info.Np | All Rights Reserved</p>
+    <ul style="display: flex; justify-content: center; gap: 2rem; list-style: none; margin-bottom: 2rem;">
+      <li><a href="#profile" style="text-decoration: none; color: var(--text-secondary); font-weight: 600;">HOME</a></li>
+      <li><a href="#experience" style="text-decoration: none; color: var(--text-secondary); font-weight: 600;">SKILLS</a></li>
+      <li><a href="#projects" style="text-decoration: none; color: var(--text-secondary); font-weight: 600;">PROJECTS</a></li>
+      <li><a href="#contact" style="text-decoration: none; color: var(--text-secondary); font-weight: 600;">CONNECT</a></li>
+    </ul>
+    <p class="copyright" style="color: var(--text-secondary); font-size: 0.9rem;">© GauravAdhikari.Info.Np | All Rights Reserved</p>
   </footer>
 
+  <!-- Script for Theme Toggle & Mobile Menu -->
+  <script>
+    // --- Mobile Hamburger Menu ---
+    function toggleMenu() {
+      const menu = document.querySelector(".menu-links");
+      menu.classList.toggle("open");
+    }
+
+    // --- Dark/Light Mode Engine ---
+    function toggleTheme() {
+      const body = document.documentElement;
+      const currentTheme = body.getAttribute('data-theme');
+      const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+      
+      // Update DOM
+      body.setAttribute('data-theme', newTheme);
+      
+      // Update Icons
+      const desktopIcon = document.getElementById('theme-icon');
+      const mobileIcon = document.getElementById('theme-icon-mobile');
+      const iconName = newTheme === 'dark' ? 'sunny-outline' : 'moon-outline';
+      if(desktopIcon) desktopIcon.name = iconName;
+      if(mobileIcon) mobileIcon.name = iconName;
+      
+      // Save to localStorage
+      localStorage.setItem('theme', newTheme);
+    }
+
+    // --- Check Saved Theme on Load ---
+    window.onload = () => {
+      const savedTheme = localStorage.getItem('theme');
+      
+      // If user has a saved preference, use it. Otherwise, default to 'light' (or you can use system preference).
+      if (savedTheme) {
+        document.documentElement.setAttribute('data-theme', savedTheme);
+        const iconName = savedTheme === 'dark' ? 'sunny-outline' : 'moon-outline';
+        document.getElementById('theme-icon').name = iconName;
+        document.getElementById('theme-icon-mobile').name = iconName;
+      }
+    };
+  </script>
+
+  <!-- External Icons Scripts -->
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-  <script src="script.js"></script>
 </body>
 </html>
